@@ -43,10 +43,7 @@ class GridView: UIView {
         bottomView.addSubview($0)
     }
 
-    var safeAreaInsetTop: CGFloat = 0
-    if #available(iOS 11, *) {
-      safeAreaInsetTop = UIApplication.shared.keyWindow?.safeAreaInsets.top ?? 0
-    }
+    let safeAreaInsetTop = self.safeAreaInsets.top
 
     Constraint.on(
       topView.leftAnchor.constraint(equalTo: topView.superview!.leftAnchor),
